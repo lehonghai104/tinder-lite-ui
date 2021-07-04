@@ -1,8 +1,8 @@
-export interface Profile {
+export interface User {
   email: string,
   firstName: string,
   id: string,
-  latName: string,
+  lastName: string,
   picture: string,
   title: string
 }

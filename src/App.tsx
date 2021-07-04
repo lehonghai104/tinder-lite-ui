@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Card from 'pages/Card';
 import { loadUnmeetProfiles } from 'services';
-import { Profile } from 'types';
-import 'App.css';
+import { User } from 'types';
 import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles({
@@ -23,9 +22,9 @@ const useStyles = makeStyles({
 });
 
 function App(): JSX.Element {
-  const [unmeetProfiles, setUnmeetProfiles] = useState<Profile[]>([]);
-  const [likedProfiles, setLikedProfiles] = useState<Profile[]>([]);
-  const [passedProfiles, setPassedProfiles] = useState<Profile[]>([]);
+  const [unmeetProfiles, setUnmeetProfiles] = useState<User[]>([]);
+  const [likedProfiles, setLikedProfiles] = useState<User[]>([]);
+  const [passedProfiles, setPassedProfiles] = useState<User[]>([]);
 
   useEffect(() => {
     console.log('run useEffect');

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Profile } from 'types';
+import { User } from 'types';
 
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ClearIcon from '@material-ui/icons/Clear';
@@ -31,7 +31,7 @@ const useStyles = makeStyles({
   }
 });
 
-function Card(props: { profile: Profile, onLike(): void, onPass(): void }): JSX.Element {
+function Card(props: { profile: User, onLike(): void, onPass(): void }): JSX.Element {
   const { profile, onLike, onPass } = props;
   const classes = useStyles();
   return (
