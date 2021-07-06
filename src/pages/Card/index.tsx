@@ -9,7 +9,6 @@ import { makeStyles } from '@material-ui/core';
 const useStyles = makeStyles({
   root: {
     height: '100%',
-    backgroundColor: 'aqua',
     display: 'flex',
     flexDirection: 'column',
     '& > .image-cover': {
@@ -17,6 +16,9 @@ const useStyles = makeStyles({
       '& > img': {
         width: '100%',
       }
+    },
+    '& > .basic-info': {
+      padding: '10px'
     },
     '& > .button-group': {
       display: 'flex',
@@ -33,11 +35,17 @@ const useStyles = makeStyles({
 
 function Card(props: { profile: User, onLike(): void, onPass(): void }): JSX.Element {
   const { profile, onLike, onPass } = props;
+  const age = Math.floor(18 + Math.random()*20);
   const classes = useStyles();
   return (
     <div className={classes.root}>
       <div className="image-cover">
         <img src={profile.picture}/>
+      </div>
+      <div className="basic-info">
+        <h1>
+          {profile.firstname} {profile.lastname}, {age}
+        </h1>
       </div>
       <div className="button-group">
         <Fab color="secondary" aria-label="add" onClick={onLike}>
